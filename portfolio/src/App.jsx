@@ -135,7 +135,7 @@ export default function Portfolio() {
                 <SquareChevronRight className="icon icon-bubblegum mr-2" /> &nbsp;Skills & Tools
               </h2>
               <ul className="skills-grid">
-                {["Python", "Shell", "OCI & AWS", "Docker & Kubernetes", "Terraform & Helm", "GitLab CI/CD & Jenkins", "Nagios", "Ansible"].map((skill, i) => (
+                {["Python", "Shell", "OCI","AWS", "Docker","Kubernetes", "Terraform", "Helm", "GitLab CI/CD","Jenkins", "Nagios", "Ansible"].map((skill, i) => (
                   <li key={i} className="skill-item">
                     <span>•</span><strong>{skill}</strong>
                   </li>
@@ -160,7 +160,7 @@ export default function Portfolio() {
           <h2 className="section-title text-center">Let's Connect</h2>
           <p className="connect-text">Let's build scalable DevOps solutions together.</p>
           <button className="connect-button">
-            <a href="mailto:adityashankar009@gmail.com" className="connect-link">Email Me</a>
+            <a href="mailto:adityashankar009@gmail.com" className="connect-link">Email Mxxxxxxxxxxxe</a>
           </button>
         </section>
       </main>
