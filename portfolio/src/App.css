@@ -1,13 +1,26 @@
-body {
+#root {
   background: linear-gradient(to bottom, #cee3ff, #ffffff);
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #0055B8;
+  overflow-x: hidden;
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  color: #0055B8;
+h1 {
+  font-size: 3.125rem;
+  font-weight: bold;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  word-break: keep-all;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
 }
 
 .portfolio-container {
@@ -15,7 +28,8 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   max-width: 48rem;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
 .animated-section {
@@ -30,16 +44,24 @@ body {
 }
 
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-align: center;
+  width: 100%;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .social-button {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem;
   color: #007BFF;
+  transition: transform 0.2s ease;
 }
 
 .social-button:hover {
@@ -59,22 +81,24 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 }
 
 .experience-roles {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .experience-block {
-  flex: 1 1 45%;
   background: white;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
 }
 
 .experience-block:hover {
@@ -89,6 +113,8 @@ body {
   padding: 1.5rem;
   background-color: #f0f6ff;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .experience-item:hover {
@@ -100,26 +126,21 @@ body {
 .experience-header {
   display: flex;
   margin-bottom: 1rem;
-}
-
-.experience-block {
-  display: flex;
-  flex-direction: column;
-  min-width: 45%;
-  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .job-title {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
-
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
 .job-period {
   font-size: 0.85rem;
   color: #666;
+  margin-top: 0.25rem;
 }
 
 .experience-content {
@@ -127,31 +148,25 @@ body {
 }
 
 .achievements {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0.5rem 0 0 0;
 }
 
 .achievements li {
   font-size: 0.92rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-}
-
-.achievements li::before {
-  color: #007bff;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-top: 0.15em;
+  line-height: 1.4;
 }
 
 .projects {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 }
 
 .project-item {
@@ -164,11 +179,7 @@ body {
   background-color: white;
   transition: all 0.3s ease;
   text-align: left;
-}
-
-.project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .project-header {
@@ -176,17 +187,18 @@ body {
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .icon {
-  display: inline-block;
+  display: inline-flex;
   transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .icon:hover {
   transform: scale(1.15) rotate(3deg);
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon-blue {
@@ -254,13 +266,10 @@ body {
 }
 
 @keyframes pulse {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1.1);
     opacity: 0;
   }
-
   50% {
     transform: scale(1.2);
     opacity: 0;
@@ -273,6 +282,7 @@ body {
 
 .project-content {
   flex: 1;
+  min-width: 0;
 }
 
 .project-title {
@@ -284,6 +294,7 @@ body {
 .project-description {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .project-link {
@@ -302,16 +313,11 @@ body {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 1rem;
   padding: 0;
   list-style: none;
-}
-
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  width: 100%;
 }
 
 .skill-item {
@@ -328,11 +334,12 @@ body {
 
 .download-section {
   border-radius: 1rem;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
   background-color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .download-content {
@@ -341,6 +348,11 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  width: 100%;
+}
+.download-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .download-button {
@@ -349,28 +361,42 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
+  align-items: center;
 }
 
 .download-button:hover {
   transform: scale(1.05);
 }
 
-.download-link {
-  padding: 0.5rem 1.5rem;
-  background-color: #007BFF;
-  color: white;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  white-space: nowrap;
+.company-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d; 
+  margin-top: -10px;
+  margin-bottom: 8px;
+  font-style: italic;
 }
 
 .download-link:hover {
   background-color: #0069D9;
 }
 
+
+.download-link {
+  padding: 0.5rem 1.5rem;
+  align-items: center;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  display: inline-block;
+}
+
 .connect-section {
   text-align: center;
+  width: 100%;
 }
 
 .connect-text {
@@ -399,6 +425,7 @@ body {
   border-radius: 9999px;
   text-decoration: none;
   transition: background-color 0.2s ease;
+  display: inline-block;
 }
 
 .connect-link:hover {
@@ -410,63 +437,14 @@ body {
   text-align: center;
   font-size: 0.75rem;
   color: #888;
-}
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .portfolio-container {
-    max-width: 64rem;
-  }
-
-  .experience-roles {
-    gap: 3rem;
-  }
-
-  .project-item {
-    flex-direction: row;
-  }
-
-  .project-content {
-    width: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .experience-block {
-    flex-basis: 100%;
-  }
-
-  .job-title {
-    gap: 1rem;
-    flex-direction: column;
-  }
-
-  .projects {
-    gap: 1rem;
-  }
-
-  .project-item {
-    flex-direction: column;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .download-content {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
 .cloud-container {
   text-align: center;
+  width: 100%;
 }
 
-/* Outer wrapper animates vertical floating */
 .cloud-float-wrapper {
   display: inline-block;
   animation: float 4s ease-in-out infinite;
@@ -482,24 +460,6 @@ body {
   object-fit: contain; 
 }
 
-@media (min-width: 640px) {
-  .cloud-image {
-    width: 192px;
-  }
-}
-
-@media (min-width: 768px) {
-  .cloud-image {
-    width: 240px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .cloud-image {
-    width: 288px;
-  }
-}
-
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -511,4 +471,69 @@ body {
 
 .cloud-float-wrapper:hover .cloud-image {
   transform: scale(1.1);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.section-spacer {
+  height: 1.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  
+  .portfolio-container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .experience-roles {
+    grid-template-columns: 1fr;
+  }
+  
+  .download-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cloud-image {
+    width: 120px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+  
+  .cloud-image {
+    width: 170px;
+  }
+  
+  .experience-roles {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 901px) {
+  .portfolio-container {
+    padding: 3rem 1.5rem;
+    max-width: 60rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .cloud-image {
+    width: 200px;
+  }
 }

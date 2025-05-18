@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Github, Linkedin, Eclipse, Mail, Cloud, LampDesk, Workflow, Cpu, Layers, SquareChevronRight, Download, LibraryBig } from "lucide-react";
 import './App.css'
+
 export default function Portfolio() {
   const headerRef = useRef(null);
   const experienceRef = useRef(null);
@@ -47,18 +48,16 @@ export default function Portfolio() {
   return (
     <div className="portfolio-container">
       <header ref={headerRef} className={`header animated-section ${animateHeader ? 'animate' : ''}`}>
-<div className="cloud-container">
-  <div className="cloud-float-wrapper">
-    <img src="/cloud-3d.png" alt="3D Cloud" className="cloud-image" />
-  </div>
-</div>
-        <h1 className="text-5xl font-bold text-blue-600 mb-2">
-          Aditya Shankarnarayan
-        </h1>
-        <p className="text-lg text-gray-700 mb-4">
+        <div className="cloud-container">
+          <div className="cloud-float-wrapper">
+            <img src="/cloud-3d.png" alt="3D Cloud" className="cloud-image" />
+          </div>
+        </div>
+        <h1>Aditya Shankarnarayan</h1>
+        <p>
           DevOps Engineer crafting scalable, secure, and efficient cloud pipelines
         </p>
-        <div className="flex justify-center space-x-6 text-blue-500">
+        <div className="social-buttons">
           <button className="social-button" onClick={() => window.location.href = 'mailto:adityashankar009@gmail.com'}>
             <Mail size={24} />
           </button>
@@ -70,18 +69,20 @@ export default function Portfolio() {
           </button>
         </div>
       </header>
-      <main className="space-y-20">
+      
+      <main className="main-content">
         <section ref={experienceRef} className={`animated-section ${animateExperience ? 'animate' : ''}`}>
           <div className="experiences">
             <div className="experience-item">
               <h2 className="section-title">
-                <LampDesk className="icon icon-yellow mr-2" /> &nbsp;Experience
+                <LampDesk className="icon icon-yellow" /> &nbsp;Experience
               </h2>
               <div className="experience-roles">
                 <div className="experience-block">
                   <h2 className="section-title">
-                    <Workflow className="icon icon-green mr-2" />&nbsp;DevOps Engineer @ Incedo Inc.
+                    <Workflow className="icon icon-green" />&nbsp;DevOps Engineer
                   </h2>
+                  <h3 className="company-name">Incedo Inc</h3>
                   <p className="job-period">Jul 2022 – Present</p>
                   <ul className="achievements">
                     <li>🛠️ One-click installer with Python, OCI, Kubernetes & CI/CD: 99% deployment time cut.</li>
@@ -92,8 +93,9 @@ export default function Portfolio() {
                 </div>
                 <div className="experience-block">
                   <h2 className="section-title">
-                    <Cpu className="icon icon-purple" />&nbsp;Sowtware Intern @ Maximus Infoware
+                    <Cpu className="icon icon-purple" />&nbsp;Software Intern
                   </h2>
+                  <h3 className="company-name">Maximus Infoware</h3>
                   <p className="job-period">May 2021 – Jul 2021</p>
                   <ul className="achievements">
                     <li>📊 Predicted terminal transactions with Prophet model: 70% accuracy pilot.</li>
@@ -103,38 +105,39 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-        <br />
+        
+        
         <section ref={projectsRef} className={`animated-section ${animateProjects ? 'animate' : ''}`}>
           <div className="experiences">
             <div className="experience-item">
               <h2 className="section-title">
-                <Layers className="icon icon-crimson mr-2" />&nbsp;Project
+                <Layers className="icon icon-crimson" />&nbsp;Projects
               </h2>
               <div className="experience-roles">
                 <div className="experience-block">
                   <h2 className="section-title">
-                    <Eclipse className="icon icon-tangerine mr-2" /> &nbsp;Arpanet
+                    <Eclipse className="icon icon-tangerine" /> &nbsp;Arpanet
                   </h2>
                   <p className="project-description">Full-stack social network with MERN. Reusable UI & robust REST API.</p>
                   <a href="https://arpanet.onrender.com" target="_blank" rel="noopener noreferrer" className="project-link">Live Demo</a>
                 </div>
                 <div className="experience-block">
                   <h2 className="section-title">
-                    <LibraryBig className="icon icon-rose mr-2" />&nbsp;Udemy Python Course
+                    <LibraryBig className="icon icon-rose" />&nbsp;Udemy Instructor
                   </h2>
-                  <p className="project-description">6,200+ students trained with hands-on Python & DevOps labs. Rated 4.1/5.</p>
+                  <p className="project-description">6,400+ students trained with hands-on Python & DevOps labs. Rated 4.1/5.</p>
                   <a href="https://www.udemy.com/user/coding-guru-2/" target="_blank" rel="noopener noreferrer" className="project-link">View Course</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <br />
+        
         <section ref={skillsRef} className={`animated-section ${animateSkills ? 'animate' : ''}`}>
           <div className="experience-item">
             <div className='experience-block'>
               <h2 className="section-title">
-                <SquareChevronRight className="icon icon-bubblegum mr-2" /> &nbsp;Skills & Tools
+                <SquareChevronRight className="icon icon-bubblegum" /> &nbsp;Skills & Tools
               </h2>
               <ul className="skills-grid">
                 {["Python", "Shell", "OCI", "AWS", "Docker", "Kubernetes", "Terraform", "Helm", "GitLab CI/CD", "Jenkins", "Nagios", "Ansible"].map((skill, i) => (
@@ -146,18 +149,21 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-        <br />
-        <section ref={downloadRef} className={`download-section animated-section ${animateDownload ? 'animate' : ''}`}>
-          <div className="download-content">
-            <h2 className="section-title">
-              <Download className="icon icon-blue mr-2" />&nbsp;Download Resume
+        
+        <section ref={downloadRef} className={`animated-section ${animateDownload ? 'animate' : ''}`}>
+          <div className="experience-item">
+            <div className='experience-block'>
+              <h2 className="section-title">
+              <Download className="icon icon-blue" />&nbsp;Download Resume
             </h2>
             <button className="download-button">
               <a href="/Aditya_Shankar_Resume.pdf" download className="download-link">Download PDF</a>
             </button>
           </div>
+          </div>
         </section>
-        <br />
+      
+        
         <section ref={connectRef} className={`connect-section animated-section ${animateConnect ? 'animate' : ''}`}>
           <h2>Let's Connect</h2>
           <p className="connect-text">Let's build scalable DevOps solutions together.</p>
