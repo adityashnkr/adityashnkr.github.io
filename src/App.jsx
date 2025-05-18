@@ -47,9 +47,11 @@ export default function Portfolio() {
   return (
     <div className="portfolio-container">
       <header ref={headerRef} className={`header animated-section ${animateHeader ? 'animate' : ''}`}>
-        <div>
-          <Cloud className="mx-auto text-blue-400" size={48} />
-        </div>
+<div className="cloud-container">
+  <div className="cloud-float-wrapper">
+    <img src="/cloud-3d.png" alt="3D Cloud" className="cloud-image" />
+  </div>
+</div>
         <h1 className="text-5xl font-bold text-blue-600 mb-2">
           Aditya Shankarnarayan
         </h1>
@@ -135,7 +137,7 @@ export default function Portfolio() {
                 <SquareChevronRight className="icon icon-bubblegum mr-2" /> &nbsp;Skills & Tools
               </h2>
               <ul className="skills-grid">
-                {["Python", "Shell", "OCI & AWS", "Docker & Kubernetes", "Terraform & Helm", "GitLab CI/CD & Jenkins", "Nagios", "Ansible"].map((skill, i) => (
+                {["Python", "Shell", "OCI", "AWS", "Docker", "Kubernetes", "Terraform", "Helm", "GitLab CI/CD", "Jenkins", "Nagios", "Ansible"].map((skill, i) => (
                   <li key={i} className="skill-item">
                     <span>•</span><strong>{skill}</strong>
                   </li>
@@ -157,7 +159,7 @@ export default function Portfolio() {
         </section>
         <br />
         <section ref={connectRef} className={`connect-section animated-section ${animateConnect ? 'animate' : ''}`}>
-          <h2 className="section-title text-center">Let's Connect</h2>
+          <h2>Let's Connect</h2>
           <p className="connect-text">Let's build scalable DevOps solutions together.</p>
           <button className="connect-button">
             <a href="mailto:adityashankar009@gmail.com" className="connect-link">Email Me</a>
