@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import cloud3D from './assets/cloud-3d.png';
 import { Github, Linkedin, Eclipse, Mail, Cloud, LampDesk, Workflow, Cpu, Layers, SquareChevronRight, Download, LibraryBig } from "lucide-react";
 import './App.css'
 
@@ -50,7 +51,7 @@ export default function Portfolio() {
       <header ref={headerRef} className={`header animated-section ${animateHeader ? 'animate' : ''}`}>
         <div className="cloud-container">
           <div className="cloud-float-wrapper">
-            <img src="/cloud-3d.png" alt="3D Cloud" className="cloud-image" />
+            <img src={cloud3D} alt="3D Cloud" className="cloud-image" />
           </div>
         </div>
         <h1>Aditya Shankarnarayan</h1>
@@ -69,7 +70,7 @@ export default function Portfolio() {
           </button>
         </div>
       </header>
-      
+
       <main className="main-content">
         <section ref={experienceRef} className={`animated-section ${animateExperience ? 'animate' : ''}`}>
           <div className="experiences">
@@ -85,12 +86,22 @@ export default function Portfolio() {
                   <h3 className="company-name">Incedo Inc</h3>
                   <p className="job-period">Jul 2022 – Present</p>
                   <ul className="achievements">
-                    <li>🛠️ One-click installer with Python, OCI, Kubernetes & CI/CD: 99% deployment time cut.</li>
-                    <li>📦 UAT server provisioning on OCI via Terraform & GitLab CI: testing time ↓65%.</li>
-                    <li>🔔 Dev & mgmt alerts with PostgreSQL, Teams & Email for UAT failures.</li>
-                    <li>🔄 Monolith → Microservices migration with Helm, Docker & Kubernetes.</li>
+                    <li>One-click installer with Python, OCI APIs, Kubernetes & GitLab CI/CD cut deployment time by 99% for 110+ microservices.</li>
+                    <li>Provisioned UAT server on OCI via Terraform & GitLab CI reduced testing pipeline time by 65%.</li>
+                    <li>Built alert system using Python, PostgreSQL & Teams improved dev response time by 67% and escalated repeat failures.</li>
+                    <li>Sent changelog-based UAT failure emails targeted relevant devs only, improving response by 20%.</li>
+                    <li>Migrated monolith to microservices rewrote Chef to Shell, built GitLab CI/CD with Helm & Kubernetes, boosting deployment frequency by 25%.</li>
+                    <li>Automated release versioning for 20+ products using GitLab & Jira APIs streamlined release workflow.</li>
+                    <li>Deployed secure AWS infrastructure with Terraform (VPC, EC2, IAM) enabled full-access PoC environment.</li>
+                    <li>Integrated Nagios with Teams via Python achieved 60% faster incident resolution.</li>
+                    <li>Mentored 3 interns delivered Django-based DevOps dashboard for org-wide updates.</li>
+                    <li>Built IaC pipelines and autoscaling Kubernetes clusters setup time down 54%, resource usage optimized.</li>
+                    <li>Created base Docker images for Python, Java & Node.js reduced build time by 25%.</li>
                   </ul>
                 </div>
+              </div>
+              <br />
+              <div className='experience'>
                 <div className="experience-block">
                   <h2 className="section-title">
                     <Cpu className="icon icon-purple" />&nbsp;Software Intern
@@ -98,15 +109,18 @@ export default function Portfolio() {
                   <h3 className="company-name">Maximus Infoware</h3>
                   <p className="job-period">May 2021 – Jul 2021</p>
                   <ul className="achievements">
-                    <li>📊 Predicted terminal transactions with Prophet model: 70% accuracy pilot.</li>
+                    <li>Predicted terminal transactions with Prophet model: 70% accuracy pilot.</li>
                   </ul>
                 </div>
               </div>
             </div>
+
           </div>
+
+
         </section>
-        
-        
+
+
         <section ref={projectsRef} className={`animated-section ${animateProjects ? 'animate' : ''}`}>
           <div className="experiences">
             <div className="experience-item">
@@ -132,7 +146,7 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-        
+
         <section ref={skillsRef} className={`animated-section ${animateSkills ? 'animate' : ''}`}>
           <div className="experience-item">
             <div className='experience-block'>
@@ -149,21 +163,31 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-        
+
         <section ref={downloadRef} className={`animated-section ${animateDownload ? 'animate' : ''}`}>
-          <div className="experience-item">
-            <div className='experience-block'>
-              <h2 className="section-title">
-              <Download className="icon icon-blue" />&nbsp;Download Resume
-            </h2>
-            <button className="download-button">
-              <a href="/Aditya_Shankar_Resume.pdf" download className="download-link">Download PDF</a>
-            </button>
-          </div>
-          </div>
+  <div className="experience-item">
+    <div className="experience-block">
+      <div className="download-header">
+        <div className="section-title">
+          <Download className="icon icon-blue" />
+          &nbsp;Download Resume
+        </div>
+        <div className="download-actions">
+          <a
+            href="/Aditya_Shankar_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="download-link small"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
         </section>
-      
-        
+
+
         <section ref={connectRef} className={`connect-section animated-section ${animateConnect ? 'animate' : ''}`}>
           <h2>Let's Connect</h2>
           <p className="connect-text">Let's build scalable DevOps solutions together.</p>
