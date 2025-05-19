@@ -165,26 +165,26 @@ export default function Portfolio() {
         </section>
 
         <section ref={downloadRef} className={`animated-section ${animateDownload ? 'animate' : ''}`}>
-  <div className="experience-item">
-    <div className="experience-block">
-      <div className="download-header">
-        <div className="section-title">
-          <Download className="icon icon-blue" />
-          &nbsp;Download Resume
-        </div>
-        <div className="download-actions">
-          <a
-            href="/Aditya_Shankar_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="download-link small"
-          >
-            Download
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div className="experience-item">
+            <div className="experience-block">
+              <div className="download-header">
+                <div className="section-title">
+                  <Download className="icon icon-blue" />
+                  &nbsp;Download Resume
+                </div>
+                <div className="download-actions">
+                  <a
+                    href="/Aditya_Shankar_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="download-link small"
+                  >
+                    Download
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
 
