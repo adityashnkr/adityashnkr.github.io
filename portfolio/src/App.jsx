@@ -139,7 +139,7 @@ export default function Portfolio() {
                   <h2 className="section-title">
                     <LibraryBig className="icon icon-rose" />&nbsp;Udemy Instructor
                   </h2>
-                  <p className="project-description">6,400+ students trained with hands-on Python & DevOps labs. Rated 4.1/5.</p>
+                  <p className="project-description">6,400+ students trained with hands-on Python ML labs. Rated 4.1/5 ⭐.</p>
                   <a href="https://www.udemy.com/user/coding-guru-2/" target="_blank" rel="noopener noreferrer" className="project-link">View Course</a>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function Portfolio() {
                 <SquareChevronRight className="icon icon-bubblegum" /> &nbsp;Skills & Tools
               </h2>
               <ul className="skills-grid">
-                {["Python", "Shell", "OCI", "AWS", "Docker", "Kubernetes", "Terraform", "Helm", "GitLab CI/CD", "Jenkins", "Nagios", "Ansible"].map((skill, i) => (
+                {["Python", "Shell", "OCI", "AWS", "Docker", "Kubernetes", "Terraform", "Helm", "GitLab CI/CD", "Jenkins", "Nagios", "Ansible","Spinnaker"].map((skill, i) => (
                   <li key={i} className="skill-item">
                     <span>•</span><strong>{skill}</strong>
                   </li>
