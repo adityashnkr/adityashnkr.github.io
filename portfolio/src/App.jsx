@@ -81,7 +81,7 @@ export default function Portfolio() {
               <div className="experience-roles">
                 <div className="experience-block">
                   <h2 className="section-title">
-                    <Workflow className="icon icon-green" />&nbsp;DevOps Engineer
+                    <Workflow className="icon icon-green" />&nbsp;Senior DevOps Engineer
                   </h2>
                   <h3 className="company-name">Incedo Inc</h3>
                   <p className="job-period">Jul 2022 – Present</p>
