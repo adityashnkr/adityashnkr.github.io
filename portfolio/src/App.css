@@ -279,6 +279,22 @@ p {
   animation: pulse 1s infinite;
 }
 
+.icon-teal {
+  color: #008080;
+}
+
+.icon-teal:hover {
+  color: #006666; 
+}
+
+.icon-bronze {
+  color: #a08040;
+}
+
+.icon-bronze:hover {
+  color: #806633; 
+}
+
 .project-content {
   flex: 1;
   min-width: 0;

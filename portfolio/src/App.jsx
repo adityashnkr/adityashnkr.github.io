@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import cloud3D from './assets/cloud-3d.png';
-import { Github, Linkedin, Eclipse, Mail, Cloud, LampDesk, Workflow, Cpu, Layers, SquareChevronRight, Download, LibraryBig } from "lucide-react";
+import { Github, Linkedin, Eclipse, Mail, Cloud, LampDesk, Workflow, Cpu, Layers, SquareChevronRight, Download, LibraryBig, Award, Container } from "lucide-react"; 
 import './App.css'
 
 export default function Portfolio() {
@@ -10,6 +10,7 @@ export default function Portfolio() {
   const skillsRef = useRef(null);
   const downloadRef = useRef(null);
   const connectRef = useRef(null);
+  const certificationsRef = useRef(null); // New ref for Certifications
 
   const [animateHeader, setAnimateHeader] = useState(false);
   const [animateExperience, setAnimateExperience] = useState(false);
@@ -17,6 +18,7 @@ export default function Portfolio() {
   const [animateSkills, setAnimateSkills] = useState(false);
   const [animateDownload, setAnimateDownload] = useState(false);
   const [animateConnect, setAnimateConnect] = useState(false);
+  const [animateCertifications, setAnimateCertifications] = useState(false);
 
   useEffect(() => {
     const options = { threshold: 0.3 };
@@ -29,11 +31,12 @@ export default function Portfolio() {
           if (entry.target === skillsRef.current) setAnimateSkills(true);
           if (entry.target === downloadRef.current) setAnimateDownload(true);
           if (entry.target === connectRef.current) setAnimateConnect(true);
+          if (entry.target === certificationsRef.current) setAnimateCertifications(true);
         }
       });
     }, options);
 
-    const refs = [headerRef, experienceRef, projectsRef, skillsRef, downloadRef, connectRef];
+    const refs = [headerRef, experienceRef, projectsRef, skillsRef, downloadRef, connectRef, certificationsRef];
 
     refs.forEach(ref => {
       if (ref.current) observer.observe(ref.current);
@@ -114,12 +117,29 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-
           </div>
-
-
         </section>
 
+        <section ref={certificationsRef} className={`animated-section ${animateCertifications ? 'animate' : ''}`}>
+          <div className="experiences">
+            <div className="experience-item">
+              <h2 className="section-title">
+                <Award className="icon icon-bronze" />&nbsp;Certifications
+              </h2>
+              <div className="experience-roles">
+                <div className="experience-block">
+                    <h2 className="section-title">
+                    <Container className="icon icon-teal" />&nbsp;Certified Kubernetes Administrator (CKA)
+                  </h2>
+                  <h3 className="company-name">Issued by The Linux Foundation</h3>
+                  <p className="job-period">Issued: July 12, 2025 | Expires: July 13, 2027</p>
+                  <p className="project-description"><strong>Credential ID:</strong> LF-4xdo4c5w6t</p>
+                  <a href="https://www.credly.com/badges/e0119e48-1461-4d9b-b63d-c9365c4b6aa4" target="_blank" rel="noopener noreferrer" className="project-link">Verify Credential</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section ref={projectsRef} className={`animated-section ${animateProjects ? 'animate' : ''}`}>
           <div className="experiences">
@@ -186,7 +206,6 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-
 
         <section ref={connectRef} className={`connect-section animated-section ${animateConnect ? 'animate' : ''}`}>
           <h2>Let's Connect</h2>
